@@ -125,6 +125,35 @@ li:hover {
 	text-align: center;
 	margin-bottom: 1em;
 }
+.porcatbtn {
+	margin: 1em 0 1.5em 350px;
+	height: 37px;
+}
+.c0 {
+	width: 80px;
+}
+.porcatbtn__btn {
+	height: 37px;
+	font-size: 1em;
+	font-weight: 500;
+	color: #1D6154;
+	border: 1px solid #1D6154;
+	border-radius: 35px;
+	background: #FFF;
+	padding: 10px;
+	margin-left: 15px;
+}
+.porcatbtn__btnsel {
+	height: 37px;
+	font-size: 1em;
+	font-weight: 500;
+	color: #FFF;
+	border: 1px solid #1D6154;
+	border-radius: 35px;
+	background: #1D6154;
+	padding: 10px;
+	margin-left: 15px;
+}
 .gallery {
 	width: 100%;
 	display: grid;

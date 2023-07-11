@@ -10,11 +10,13 @@ let urls = `http://localhost:5678/api/works`
 let response = await fetch(urls);
 wors = await response.json();
 wmax = wors.length -1;
+//console.log(wors);
 
 urls = `http://localhost:5678/api/categories`
 response = await fetch(urls);
 cats = await response.json();
 cmax = cats.length -1;
+console.log(cats);
 
 function removeFigures() {
     try {
@@ -50,11 +52,32 @@ function createFigures()  {
         console.log("Erreur createFigures " + error.message);
     }
 }
+function createCatBtns() {
+    console.log("Début createCatBtns");
+    let div = document.createElement("div");
+    div.classList.add("porcatbtn");
+    por.appendChild(div);
+    let btn = document.createElement("button");
+    btn.type = "button";
+    btn.innerHTML = "Tous";
+    btn.classList.add("porcatbtn__btnsel", "c0");
+    div.appendChild(btn);
+    let cx = "";
+    for (let c = 0; c <= cmax; c++) {
+        btn = document.createElement("button");
+        btn.type = "button";
+        btn.innerHTML = cats[c].name;
+        cx = "c" + (c + 1).toString();
+        btn.classList.add("porcatbtn__btn", cx);
+        div.appendChild(btn);
+    }
+    console.log("createCatBtns Ok");
+}
 function main() {
     let b = removeFigures();
     if (b === true) {console.log("removeFigures Ok");
                      b = createFigures()};
     if (b === true) {console.log("createFigures Ok")};
 }
-
+createCatBtns();
 main();
